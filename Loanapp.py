@@ -15,16 +15,16 @@ def load_model(model_path):
 def main():
     st.title("Loan Approval Predictor")
 
-    model_options = ["Logistic Regression", "Decision Tree", "XGB Classifier", "SVC", "Random Forest"]
+    model_options = ["Logistic Regression", "Decision Tree Classifier", "XGB Classifier", "Support Vector Classifier", "Random Forest Classifier"]
     selected_model_name = st.selectbox("Select Model", model_options)
 
     model_dir = "model_dir"  #adjust to your path.
     model_file_map = {
         "Logistic Regression": "Logistic Regression_model.joblib",
-        "Decision Tree": "Decision Tree Classifier_model.joblib",
+        "Decision Tree Classifier": "Decision Tree Classifier_model.joblib",
         "XGB Classifier": 'XGB Classifier_model.joblib',
-        "SVC": "Support Vector Classifier_model.joblib",
-        "Random Forest": "Random Forest Classifier_model.joblib"
+        "Support Vector Classifier": "Support Vector Classifier_model.joblib",
+        "Random Forest Classifier": "Random Forest Classifier_model.joblib"
     }
 
     model_path = os.path.join(model_dir, model_file_map[selected_model_name])
